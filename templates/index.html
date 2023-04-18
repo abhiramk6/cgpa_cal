@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CGPA calculator</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>CGPA calculator AIDS Y20</h1>
+
+      <form method="post" action="/calculate">
+
+          <div class="form-group">
+          <label for="cur_gpa">Current GPA:</label>
+          <input type="number" step="0.01" class="form-control" id="cur_gpa" name="cur_gpa" placeholder="Enter your current GPA" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cv">CV/GWA:</label>
+          <input type="number" step="0.01" class="form-control" id="cv" name="cv" required>
+        </div>
+        <div class="form-group">
+          <label for="sc">SC/SMA:</label>
+          <input type="number" step="0.01" class="form-control" id="sc" name="sc" required>
+        </div>
+        <div class="form-group">
+          <label for="sp">SP/RS:</label>
+          <input type="number" step="0.01" class="form-control" id="sp" name="sp" required>
+        </div>
+        <div class="form-group">
+          <label for="nlp">NLP/AIoT:</label>
+          <input type="number" step="0.01" class="form-control" id="nlp" name="nlp" required>
+        </div>
+        <div class="form-group">
+          <label for="opr">OR/Mech:</label>
+          <input type="number" step="0.01" class="form-control" id="opr" name="opr" required>
+        </div>
+        <div class="form-group">
+          <label for="tpt">TPT:</label>
+          <input type="number" step="0.01" class="form-control" id="tpt" name="tpt" required>
+        </div>
+        <div class="form-group">
+          <label for="mcp">MCP:</label>
+          <input type="number" step="0.01" class="form-control" id="mcp" name="mcp" required>
+        </div>
+        <div class="form-group">
+          <label for="tp">TP:</label>
+          <input type="number" step="0.01" class="form-control" id="tp" name="tp" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ti">TI:</label>
+          <input type="number" step="0.01" class="form-control" id="ti" name="ti" required>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+      </form>
+
+      {% if result %}
+        <p>Your new GPA is: {{ result.gpa }}</p>
+        <p>Your GPA for this semester is: {{ result.semester_gpa }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
